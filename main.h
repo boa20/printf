@@ -70,6 +70,13 @@ typedef struct specifier
 int _puts(char *str);
 int _putchar(int c);
 
+/* specifier.c module */
+int (*get_specifier(char *s))(va_list ap, params_t *params);
+int get_print_func(char *s, va_list ap, params_t *params);
+int get_flag(char *s, params_t *params);
+int get_modifier(char *s, params_t *params);
+char *get_width(char *s, params_t *params, va_list ap);
+
 /* convert_number.c module */
 int out_hex(va_list ap, params_t *params);
 int out_HEX(va_list ap, params_t *params);
@@ -78,5 +85,6 @@ int out_octal(va_list ap, params_t *params);
 
 /* params.c module */
 void init_params(params_t *params, va_list ap);
+
 
 #endif
