@@ -75,3 +75,8 @@ int out_hex(va_list ap, params_t *params);
 int out_HEX(va_list ap, params_t *params);
 int out_binary(va_list ap, params_t *params);
 int out_octal(va_list ap, params_t *params);
+
+/* params.c module */
+void init_params(params_t *params, va_list ap);
+
+#endif
