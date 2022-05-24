@@ -66,25 +66,9 @@ typedef struct specifier
 	int (*f)(va_list, params_t *);
 } specifier_t;
 
-/* _puts.c module */
+/* _put.c module */
 int _puts(char *str);
 int _putchar(int c);
-
-/* specifier.c module */
-int (*get_specifier(char *s))(va_list ap, params_t *params);
-int get_print_func(char *s, va_list ap, params_t *params);
-int get_flag(char *s, params_t *params);
-int get_modifier(char *s, params_t *params);
-char *get_width(char *s, params_t *params, va_list ap);
-
-/* convert_number.c module */
-int out_hex(va_list ap, params_t *params);
-int out_HEX(va_list ap, params_t *params);
-int out_binary(va_list ap, params_t *params);
-int out_octal(va_list ap, params_t *params);
-
-/* parameters.c module */
-void init_params(params_t *params, va_list ap);
 
 /* print_function.c module */
 int print_char(va_list ap, params_t *params);
@@ -93,12 +77,25 @@ int print_string(va_list ap, params_t *params);
 int print_percent(va_list ap, params_t *params);
 int print_S(va_list ap, params_t *params);
 
-/* number.c module */
+/* long_numbers.c module */
 char *convert(long int num, int base, int flags, params_t *params);
 int print_unsigned(va_list ap, params_t *params);
 int print_address(va_list ap, params_t *params);
 
-/* print_char_strings.c  module */
+/* specifiers.c module */
+int (*get_specifier(char *s))(va_list ap, params_t *params);
+int get_print_func(char *s, va_list ap, params_t *params);
+int get_flag(char *s, params_t *params);
+int get_modifier(char *s, params_t *params);
+char *get_width(char *s, params_t *params, va_list ap);
+
+/* converters.c module */
+int print_hex(va_list ap, params_t *params);
+int print_HEX(va_list ap, params_t *params);
+int print_binary(va_list ap, params_t *params);
+int print_octal(va_list ap, params_t *params);
+
+/* print_char_strings.c module */
 int print_from_to(char *start, char *stop, char *except);
 int print_rev(va_list ap, params_t *params);
 int print_rot13(va_list ap, params_t *params);
@@ -110,10 +107,13 @@ int print_number(char *str, params_t *params);
 int print_number_right_shift(char *str, params_t *params);
 int print_number_left_shift(char *str, params_t *params);
 
+/* parameterss.c module */
+void init_params(params_t *params, va_list ap);
+
 /* string_fields.c modoule */
 char *get_precision(char *p, params_t *params, va_list ap);
 
-/* prinf.c module */
+/* _prinf.c module */
 int _printf(const char *format, ...);
 
 #endif
