@@ -86,7 +86,7 @@ int out_octal(va_list ap, params_t *params);
 /* parameters.c module */
 void init_params(params_t *params, va_list ap);
 
-/* print-functions.c module */
+/* print_function.c module */
 int print_char(va_list ap, params_t *params);
 int print_int(va_list ap, params_t *params);
 int print_string(va_list ap, params_t *params);
@@ -98,7 +98,7 @@ char *convert(long int num, int base, int flags, params_t *params);
 int print_unsigned(va_list ap, params_t *params);
 int print_address(va_list ap, params_t *params);
 
-/* simple-printers.c module */
+/* print_char_strings.c  module */
 int print_from_to(char *start, char *stop, char *except);
 int print_rev(va_list ap, params_t *params);
 int print_rot13(va_list ap, params_t *params);
@@ -113,7 +113,7 @@ int print_number_left_shift(char *str, params_t *params);
 /* string_fields.c modoule */
 char *get_precision(char *p, params_t *params, va_list ap);
 
-/* _prinf.c module */
+/* prinf.c module */
 int _printf(const char *format, ...);
 
 #endif
