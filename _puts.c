@@ -16,6 +16,7 @@ int _puts(char *str)
 }
 
 /**
+ * B
  * _putchar - writes the character c to stdout
  * @c: The character to print
  *
